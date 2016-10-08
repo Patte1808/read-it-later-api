@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'ffaker'
+
+100.times do
+  Link.create(title: FFaker::Lorem.word, notes: FFaker::Lorem.paragraph)
+end
