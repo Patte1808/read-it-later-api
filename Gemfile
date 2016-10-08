@@ -34,6 +34,8 @@ end
 
 gem 'ffaker'
 gem 'rack-cors'
+gem 'devise'
+gem 'jwt'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :update, :destroy]
+  before_filter :authenticate_request!
 
   # GET /links
   def index
@@ -35,7 +36,11 @@ class LinksController < ApplicationController
 
   # DELETE /links/1
   def destroy
-    @link.destroy
+    if @link.destroy
+      render json: { id: params[:id] }, status: 200
+    else
+      render status: 500
+    end
   end
 
   private
