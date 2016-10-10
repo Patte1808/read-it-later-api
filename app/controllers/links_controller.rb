@@ -4,7 +4,8 @@ class LinksController < ApplicationController
 
   # GET /links
   def index
-    @links = Link.all
+    @user = current_user
+    @links = @user.links.all
 
     render json: @links
   end
@@ -16,7 +17,10 @@ class LinksController < ApplicationController
 
   # POST /links
   def create
+    @user = current_user
     @link = Link.new(link_params)
+
+    @link.user = @user
 
     if @link.save
       render json: @link, status: :created, location: @link

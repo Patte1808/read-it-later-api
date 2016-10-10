@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'ffaker'
 
-100.times do
-  Link.create(title: FFaker::Lorem.word, notes: FFaker::Lorem.paragraph)
-end
+#100.times do
+#  Link.create(title: FFaker::Lorem.word, notes: FFaker::Lorem.paragraph)
+#end
